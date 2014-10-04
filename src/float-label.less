@@ -13,6 +13,9 @@
 @input-left-margin: 10px;
 @floated-label-height: 12px;
 
+/*Colors*/
+@input-background-color: rgb(245,247,246);
+@text-color: rgb(162,162,162);
 
 /*Helpers*/
 .control-height {
@@ -30,6 +33,7 @@
     margin: 5px;
     font-size: @font-size;
     .control-height;
+    color: @text-color;
 }
 
 .float-label-input {
@@ -41,6 +45,10 @@
     font-size: @font-size;
     .control-height;
     padding-left: @input-left-margin;
+    background-color: @input-background-color;
+    border: 1px solid @input-background-color;
+    border-radius: 5px;
+    color: darken(@text-color,30%);
 }
 
 .float-label-label {
@@ -54,11 +62,17 @@
     transition: 0.2s;
 }
 
+/*Input override*/
+.float-label-input:focus {
+    border: 1px solid @input-background-color;
+    outline: 0;
+}
+
 /*Float*/
 .float-label-defaults {
     font-size: @floated-label-height;
-    height:@floated-label-height;
-    line-height:@floated-label-height;
+    height: @floated-label-height;
+    line-height: @floated-label-height;
 }
 
 .float-label-up {
@@ -71,5 +85,5 @@
 }
 
 .float-label-dirty {
-     line-height:(@input-height * 1.2);
+    line-height: (@input-height * 1.2);
 }
