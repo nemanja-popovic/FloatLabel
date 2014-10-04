@@ -122,6 +122,9 @@
                     E.I.keyup(function () {
                         E.checkContent();
                     });
+                    E.L.click(function () {
+                        E.I.focus();
+                    });
                 },
 
                 init: function () {
