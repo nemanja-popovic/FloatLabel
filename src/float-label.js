@@ -116,6 +116,9 @@
                     E.I.blur(function () {
                         E.checkContent();
                     });
+                    E.I.keydown(function () {
+                        E.checkContent();
+                    });
                     E.I.keyup(function () {
                         E.checkContent();
                     });

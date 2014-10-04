@@ -4,6 +4,19 @@
 
 /*Icons*/
 @icon-message: 'message.png';
+@icon-heart: 'heart.png';
+@icon-info: 'info.png';
+@icon-settings: 'settings.png';
+@icon-lock: 'lock.png';
+@icon-star: 'star.png';
+@icon-video: 'video.png';
+@icon-internet: 'internet.png';
+@icon-comment: 'comment.png';
+@icon-link: 'link.png';
+@icon-warning: 'warning.png';
+@icon-refresh: 'refresh.png';
+@icon-home: 'home.png';
+@icon-phone: 'phone.png';
 
 /*Colors*/
 
@@ -15,14 +28,15 @@
 @font-size: 20px;
 @input-border-width: 2px;
 @input-left-margin: 10px;
-@floated-label-height: 12px;
-@icon-size: 37px;
+@floated-label-height: 10px;
+@icon-size: 35px;
 
 /*Colors*/
 @input-background-color: #fff;
 @text-color: #555;
 @border-color: #ccc;
-@box-shadow-color:rgba(255, 255, 255, 0.7);
+@box-shadow-color: rgba(255, 255, 255, 0.7);
+@focus-border-color: #66afe9;
 
 /*Helpers*/
 .control-height {
@@ -41,11 +55,11 @@
     font-size: @font-size;
     .control-height;
     color: @text-color;
-    width:100%;
+    width: 100%;
 }
 
 .float-label-input {
-    display:block;
+    display: block;
     position: relative;
     padding: 0;
     margin: 0;
@@ -60,6 +74,11 @@
     color: darken(@text-color,30%);
     width: 100%;
     box-sizing: border-box;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
 .float-label-label {
@@ -76,7 +95,9 @@
 
 /*Input override*/
 .float-label-input:focus {
-    outline: 0;
+    border-color: @focus-border-color;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+    outline: 0 none;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
@@ -103,30 +124,51 @@
 
 
 /*Icons*/
-
-/* style glyph */
 .float-label-icon {
-  position: absolute;
-  width:@icon-size;
-  height:@icon-size;
+    position: absolute;
+    width: @icon-size;
+    height: @icon-size;
     /*padding: 10px;*/
-  pointer-events: none;
-  z-index:1001;
-  display:inline-block;
-}
-
-/* align glyph */
-.left-addon .float-label-icon  { left:  5px;}
-.right-addon .float-label-icon { right: 5px;}
-
-/* add padding  */
-.left-addon input, .left-addon label  { padding-left:  40px; }
-.right-addon input { padding-right: 40px; }
-
-
-
-.float-label-icon-message {
-    background-image: url('@{icon-path}@{icon-message}');
+    pointer-events: none;
+    z-index: 1001;
+    display: inline-block;
     background-repeat: no-repeat;
     background-position: center;
 }
+
+/* align icon */
+.left-addon .float-label-icon {
+    left: 5px;
+    border-right:1px solid @border-color;
+}
+
+.right-addon .float-label-icon {
+    right: 5px;
+     border-left:1px solid @border-color;
+}
+
+/* add padding  */
+.left-addon input, .left-addon label {
+    padding-left: 40px;
+}
+
+.right-addon input {
+    padding-right: 40px;
+}
+
+
+/*All icons*/
+.float-label-icon-message { background-image: url('@{icon-path}@{icon-message}');}
+.float-label-icon-heart { background-image: url('@{icon-path}@{icon-heart}');}
+.float-label-icon-info { background-image: url('@{icon-path}@{icon-info}');}
+.float-label-icon-settings { background-image: url('@{icon-path}@{icon-settings}');}
+.float-label-icon-lock { background-image: url('@{icon-path}@{icon-lock}');}
+.float-label-icon-star { background-image: url('@{icon-path}@{icon-star}');}
+.float-label-icon-video { background-image: url('@{icon-path}@{icon-video}');}
+.float-label-icon-internet { background-image: url('@{icon-path}@{icon-internet}');}
+.float-label-icon-comment { background-image: url('@{icon-path}@{icon-comment}');}
+.float-label-icon-link { background-image: url('@{icon-path}@{icon-link}');}
+.float-label-icon-warning { background-image: url('@{icon-path}@{icon-warning}');}
+.float-label-icon-refresh { background-image: url('@{icon-path}@{icon-refresh}');}
+.float-label-icon-home { background-image: url('@{icon-path}@{icon-home}');}
+.float-label-icon-phone { background-image: url('@{icon-path}@{icon-phone}');}

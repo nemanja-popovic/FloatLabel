@@ -15,19 +15,30 @@
     <script src="float-label.js"></script>
     <!--  <script src="../dist/float-label.min.js"></script>-->
 
-    <input id="i1" class="flabel"  type="text" name="name" value=""
-        data-label-text="Label 1" data-label-icon="message" />
-    <input id="Text1" class="flabel" type="number" name="name" value=""
-        data-label-text="number 1" data-label-icon="message" />
-    <input id="Text2" class="flabel" type="email" name="name" value=""
+    <input class="flabel"  type="text" name="name" value=""
+        data-label-text="Label 1" data-label-icon="info" />
+
+    <input  class="flabel" type="number" name="name" value=""
+        data-label-text="number 1" data-label-icon="heart"
+        data-label-icon-side="left" />
+
+      <input  class="flabel" type="tel" name="name" value=""
+        data-label-text="number 1" data-label-icon="phone"
+        data-label-icon-side="left" />
+
+
+    <input class="flabel" type="email" name="name" value=""
         data-label-text="email 1" data-label-icon="message" />
-     <input id="Email1" class="flabel" type="password" name="name" value=""
-        data-label-text="password 1" data-label-icon="message" />
-      <input id="Password1" class="flabel" type="search" name="name" value=""
-        data-label-text="search 1" data-label-icon="message"
+
+     <input class="flabel" type="password" name="name" value=""
+        data-label-text="password 1" data-label-icon="lock" />
+
+      <input class="flabel" type="search" name="name" value=""
+        data-label-text="search 1" data-label-icon="internet"
           data-label-icon-side="left" />
-      <input id="Search1" class="flabel" type="url" name="name" value=""
-        data-label-text="url 1" data-label-icon="message" />
+    
+      <input class="flabel" type="url" name="name" value=""
+        data-label-text="url 1" data-label-icon="link" />
     <script>
         $(document).ready(function () {
             $('.flabel').FloatLabel();
