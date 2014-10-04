@@ -10,7 +10,8 @@
     'namespace FloatLabel';
     $.fn.FloatLabel = function (options) {
         var settings = $.extend({
-            hasIcon: false,
+            hasIcon: true,
+            iconSide:'right',
             direction: 'float-label-up'
         }, options);
 
@@ -21,30 +22,44 @@
             var floatLabel = {
                 I: $(selectedObj),
                 L: '',
-                hasIcon: settings.hasIcon,
                 labelText: '',
-                floatDirection:'',
+                Icon: '',
+                iconName:'username',
+                hasIcon: settings.hasIcon,
+                iconSide:settings.iconSide,
+                floatDirection: settings.direction,
                 getConfigData: function () {
                     var E = this;
 
                     //Get text for label
-                    var labelText = '';
                     if (E.I.attr('data-label-text')) {
-                        labelText = E.I.data('label-text');
+                        E.labelText = E.I.data('label-text');
                     }
-                    E.labelText = labelText;
 
                     //Get direction for label
-                    var floatDirection = 'float-label-up';
                     if (E.I.attr('data-label-direction')) {
-                        floatDirection = 'float-label-' + E.I.data('label-direction');
+                        E.floatDirection  = 'float-label-' + E.I.data('label-direction');
                     }
-                    E.floatDirection = floatDirection;
+
+                    if (E.hasIcon) {
+                        //Get icon
+                        if (E.I.attr('data-label-icon')) {
+                            E.iconName = '' + E.I.data('label-icon');
+                        }
+                    }
+                    //Get side
+                    if (E.I.attr('data-label-icon-side')) {
+                        E.iconSide = E.I.data('label-icon-side');
+                    }
 
                 },
                 //Function for creating elements
                 createElements: function () {
                     var E = this;
+
+                    //Add class to input element
+                    E.I.addClass('float-label-input');
+
                     //Wrapper
                     E.I.wrap('<div class="float-label-wrapper">');
 
@@ -54,8 +69,16 @@
                     //Append label
                     E.I.parent().append(E.L);
 
-                    //Add class to input element
-                    E.I.addClass('float-label-input');
+                    //Icon
+                    if (E.hasIcon) {
+                        E.Icon = $('<i class="float-label-icon"></i>');
+                        E.Icon.addClass('float-label-icon-' + E.iconName);
+                        //Append icon
+                        E.I.parent().prepend(E.Icon);
+
+                        E.I.parent().addClass(E.iconSide + '-addon');
+                    }
+
                 },
                 hideLabel: function () {
                     var E = this;
