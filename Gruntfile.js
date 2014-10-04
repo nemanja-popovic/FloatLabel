@@ -4,38 +4,17 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    // Metadata.
-    pkg: grunt.file.readJSON('FloatLabel.jquery.json'),
-    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-      '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-      ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
-    // Task configuration.
-    clean: {
+     clean: {
       files: ['dist']
-    },
-    concat: {
-      options: {
-        banner: '<%= banner %>',
-        stripBanners: true
-      },
-      dist: {
-        src: ['src/jquery.<%= pkg.name %>.js'],
-        dest: 'dist/jquery.<%= pkg.name %>.js'
-      },
     },
     uglify: {
       options: {
-        banner: '<%= banner %>'
+        banner: '/* Float label by Nemanja Popovic */'
       },
       dist: {
-        src: '<%= concat.dist.dest %>',
-        dest: 'dist/jquery.<%= pkg.name %>.min.js'
+        src: 'src/float-label.js',
+        dest: 'dist/float-label.min.js'
       },
-    },
-    qunit: {
-      files: ['test/**/*.html']
     },
     jshint: {
       options: {
@@ -47,35 +26,40 @@ module.exports = function(grunt) {
       src: {
         src: ['src/**/*.js']
       },
-      test: {
-        src: ['test/**/*.js']
-      },
     },
     watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
-      },
       src: {
-        files: '<%= jshint.src.src %>',
-        tasks: ['jshint:src', 'qunit']
+        files: 'src/float-label.less',
+        tasks: ['less']
       },
-      test: {
-        files: '<%= jshint.test.src %>',
-        tasks: ['jshint:test', 'qunit']
-      },
+      // test: {
+        // files: '<%= jshint.test.src %>',
+        // tasks: ['jshint:test', 'qunit']
+      // },
+    },
+	 less: {
+      development: {
+        options: {
+          compress: true,
+          yuicompress: true,
+          optimization: 2
+        },
+        files: {
+          // target.css file: source.less file
+          "dist/float-label.css": "src/float-label.less"
+        }
+      }
     },
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-less');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'clean', 'less', 'uglify']);
 
 };
