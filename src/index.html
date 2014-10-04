@@ -4,15 +4,26 @@
     <title></title>
 </head>
 <body>
+    <link href="../dist/float-label.css" rel="stylesheet" />
     <script src="../libs/jquery/jquery.js"></script>
     <script src="float-label.js"></script>
-     <div>
-        <input id="i1" type="text" name="name" value=" "
-             data-label="Label 1" />
-    </div>
+    <!--  <script src="../dist/float-label.min.js"></script>-->
+
+    <input id="i1" class="flabel" type="text" name="name" value=""
+        data-label-text="Label 1" />
+    <input id="Text1" class="flabel" type="number" name="name" value=""
+        data-label-text="number 1" />
+    <input id="Text2" class="flabel" type="email" name="name" value=""
+        data-label-text="email 1" />
+     <input id="Email1" class="flabel" type="password" name="name" value=""
+        data-label-text="password 1" />
+      <input id="Password1" class="flabel" type="search" name="name" value=""
+        data-label-text="search 1" />
+      <input id="Search1" class="flabel" type="url" name="name" value=""
+        data-label-text="url 1" />
     <script>
         $(document).ready(function () {
-            $('#i1').FloatLabel();
+            $('.flabel').FloatLabel();
         });
     </script>
 </body>

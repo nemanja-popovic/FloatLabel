@@ -1,2 +1,75 @@
-﻿body {
+﻿/*Variables*/
+/*Path*/
+@icon-path: '../img/';
+/*Colors*/
+
+/*Typography*/
+@font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*Sizes*/
+@input-height: 35px;
+@font-size: 20px;
+@input-border-width: 2px;
+@input-left-margin: 10px;
+@floated-label-height: 12px;
+
+
+/*Helpers*/
+.control-height {
+    height: @input-height;
+    line-height: @input-height;
+}
+
+/*Layout*/
+.float-label-wrapper {
+    font-family: @font-family;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 5px;
+    font-size: @font-size;
+    .control-height;
+}
+
+.float-label-input {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+    border-width: @input-border-width;
+    font-size: @font-size;
+    .control-height;
+    padding-left: @input-left-margin;
+}
+
+.float-label-label {
+    position: absolute;
+    margin-top: @input-border-width;
+    .control-height;
+    left: @input-left-margin;
+    -moz-transition: inherit;
+    -o-transition: inherit;
+    -webkit-transition: inherit;
+    transition: 0.2s;
+}
+
+/*Float*/
+.float-label-defaults {
+    font-size: @floated-label-height;
+    height:@floated-label-height;
+    line-height:@floated-label-height;
+}
+
+.float-label-up {
+    .float-label-defaults;
+    top: 0;
+}
+
+.float-label-down {
+    .float-label-defaults;
+}
+
+.float-label-dirty {
+     line-height:(@input-height * 1.2);
 }
