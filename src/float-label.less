@@ -17,6 +17,9 @@
 @icon-refresh: 'refresh.png';
 @icon-home: 'home.png';
 @icon-phone: 'phone.png';
+@icon-user: 'user.png';
+@icon-search: 'search.png';
+@icon-skype: 'skype.png';
 
 /*Colors*/
 
@@ -115,10 +118,12 @@
 
 .float-label-down {
     .float-label-defaults;
+    bottom:0;
+    top:auto;
 }
 
 .float-label-dirty {
-    line-height: (@input-height * 1.2);
+    line-height: 36px;
 }
 
 
@@ -148,8 +153,10 @@
 }
 
 /* add padding  */
-.left-addon input, .left-addon label {
+.left-addon input  {
     padding-left: 40px;
+} .left-addon label {
+    padding-left: 32px;
 }
 
 .right-addon input {
@@ -172,3 +179,6 @@
 .float-label-icon-refresh { background-image: url('@{icon-path}@{icon-refresh}');}
 .float-label-icon-home { background-image: url('@{icon-path}@{icon-home}');}
 .float-label-icon-phone { background-image: url('@{icon-path}@{icon-phone}');}
+.float-label-icon-user { background-image: url('@{icon-path}@{icon-user}');}
+.float-label-icon-search { background-image: url('@{icon-path}@{icon-search}');}
+.float-label-icon-skype { background-image: url('@{icon-path}@{icon-skype}');}

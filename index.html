@@ -1,91 +1,274 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Float label : Floating label for input elements. When input empty the label is placeholder.">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
+    <link href="stylesheets/float-label.css" rel="stylesheet" />
     <title>Float label</title>
-  </head>
 
-  <body>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="javascripts/float-label.min.js"></script>
+</head>
+
+<body>
 
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/nemanja23031991/FloatLabel">View on GitHub</a>
+            <a id="forkme_banner" href="https://github.com/nemanja23031991/FloatLabel">View on GitHub</a>
 
-          <h1 id="project_title">Float label</h1>
-          <h2 id="project_tagline">Floating label for input elements. When input empty the label is placeholder.</h2>
+            <h1 id="project_title">Float label</h1>
+            <h2 id="project_tagline">Floating label for input elements. When input empty the label is placeholder.</h2>
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/nemanja23031991/FloatLabel/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/nemanja23031991/FloatLabel/tarball/master">Download this project as a tar.gz file</a>
+                <a class="zip_download_link" href="https://github.com/nemanja23031991/FloatLabel/zipball/master">Download this project as a .zip file</a>
+                <a class="tar_download_link" href="https://github.com/nemanja23031991/FloatLabel/tarball/master">Download this project as a tar.gz file</a>
             </section>
         </header>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="float-label" class="anchor" href="#float-label"><span class="octicon octicon-link"></span></a>Float Label</h3>
+        <section id="main_content" class="inner">
+            <h3>
+                <a name="float-label" class="anchor" href="#float-label"><span class="octicon octicon-link"></span></a>Float Label</h3>
 
-<p>A jQuery plugin that creates floating labels in input elements.
-Float Label allows you to quickly create labels that show more details about input element for use in web applications and websites. The Float Label is easily customizable by changing the less styles and provides flexibility with options.</p>
+            <p>
+                A jQuery plugin that creates floating labels in input elements.
+Float Label allows you to quickly create labels that show more details about input element for use in web applications and websites. The Float Label is easily customizable by changing the less styles and provides flexibility with options.
+            </p>
 
-<h3>
-<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h3>
+            <h3>
+                <a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h3>
 
-<ul>
-<li>Straightforward implementation with simple options</li>
-<li>Can run on as many input elements as needed</li>
-<li>Input elements can have small icon on right or left side</li>
-<li>Floated labels look and feel is easily customized through the small less file</li>
-</ul><h3>
-<a name="supported-input-types" class="anchor" href="#supported-input-types"><span class="octicon octicon-link"></span></a>Supported input types</h3>
+            <ul>
+                <li>Straightforward implementation with simple options</li>
+                <li>Can run on as many input elements as needed</li>
+                <li>Input elements can have small icon on right or left side</li>
+                <li>Floated labels look and feel is easily customized through the small less file</li>
+            </ul>
+            <h3>
+                <a name="supported-input-types" class="anchor" href="#supported-input-types"><span class="octicon octicon-link"></span></a>Supported input types</h3>
 
-<ul>
-<li>text</li>
-<li>password</li>
-<li>number</li>
-<li>tel</li>
-<li>email</li>
-<li>search</li>
-<li>url</li>
-</ul><h3>
-<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h3>
+            <ul>
+                <li>text</li>
+                <li>password</li>
+                <li>number</li>
+                <li>tel</li>
+                <li>email</li>
+                <li>search</li>
+                <li>url</li>
+            </ul>
+            <h3>
+                <a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h3>
 
-<h3>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
+            <div class="examples">
+                <input class="flabel" type="text" value=""
+                    data-label-text="No icon" />
+                <pre>
+&lt;input class="flabel" type="text" value=""
+        data-label-text="No icon"  /&gt;</pre>
 
-<h3>
-<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h3>
+                <input class="flabel" type="text" value=""
+                    data-label-text="Down" data-label-direction="down" />
+                <pre>
+&lt;input class="flabel" type="text" value=""
+        data-label-text="Down"  data-label-direction="down"  /&gt</pre>
 
-<h3>
-<a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h3>
+                <input class="flabel" type="text" value=""
+                    data-label-text="Information" data-label-icon="info" />
+                <pre>
+&lt;input class="flabel"  type="text" value=""
+        data-label-text="Information" data-label-icon="info" /&gt</pre>
+                <input class="flabel" type="number" value=""
+                    data-label-text="Number you love" data-label-icon="heart"
+                    data-label-icon-side="left" />
+                <pre>
+&lt;input  class="flabel" type="number" value=""
+        data-label-text="Number you love" data-label-icon="heart"
+        data-label-icon-side="left" /&gt</pre>
+                <input class="flabel" type="tel" value=""
+                    data-label-text="Phone number" data-label-icon="phone"
+                    data-label-icon-side="left" />
+                <pre>
+&lt;input  class="flabel" type="tel" value=""
+        data-label-text="Phone number" data-label-icon="phone"
+        data-label-icon-side="left" /&gt</pre>
 
-<p>Nemanja Popovic (<a href="https://github.com/nemanja23031991" class="user-mention">@nemanja23031991</a>) in 2014.</p>
+                <input class="flabel" type="email" value=""
+                    data-label-text="Email address" data-label-icon="message" />
+                <pre>
+&lt;input class="flabel" type="email" value=""
+        data-label-text="Email address" data-label-icon="message" /&gt</pre>
+                <input class="flabel" type="password" value=""
+                    data-label-text="Password" data-label-icon="lock" />
+                <pre>
+&lt;input class="flabel" type="password" value=""
+        data-label-text="Password" data-label-icon="lock" /&gt</pre>
+                <input class="flabel" type="search" value=""
+                    data-label-text="Term you want to find" data-label-icon="internet"
+                    data-label-icon-side="left" /><pre>
+&lt;input class="flabel" type="search" value=""
+      data-label-text="Term you want to find" data-label-icon="internet"
+          data-label-icon-side="left" /&gt</pre>
+                <input class="flabel" type="url" value=""
+                    data-label-text="Page address" data-label-icon="link" />
+                <pre>
+&lt;input class="flabel" type="url" value=""
+        data-label-text="Page address" data-label-icon="link" /&gt</pre>
+                <script>
+                    $(document).ready(function () {
+                        $('.flabel').FloatLabel();
+                    });
+                </script>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Float Label? Check out the documentation at <a href="https://github.com/nemanja23031991/FloatLabel">https://github.com/nemanja23031991/FloatLabel</a> or contact <a href="mailto:nemanja23031991@yahoo.com">nemanja23031991@yahoo.com</a> and we’ll help you sort it out.</p>
-      </section>
+
+            </div>
+
+            <h3>
+                <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+            <ol>
+                <li>
+                    <h5>Download all files</h5>
+                    <ul>
+                        <li>dist/float-label.min.js</li>
+                        <li>float-label.css</li>
+                        <li>img folder</li>
+                    </ul>
+                </li>
+                <li>
+                    <h5>Include them in your html file along with jQuery</h5>
+                    <pre>&lt;link href="stylesheets/float-label.css" rel="stylesheet" /&gt;
+&lt;script src="https://code.jquery.com/jquery-2.1.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="javascripts/float-label.min.js"&gt;&lt;/script&gt;</pre>
+
+                </li>
+                <li>
+                    <h5>Example HTML:</h5>
+                    <pre>&lt;input class="flabel" type="url" value=""
+        data-label-text="Page address" data-label-icon="link" /&gt;</pre>
+                </li>
+                <li>
+                    <h5>Init on document ready event:</h5>
+                    <pre>
+$(document).ready(function () {
+    $('.flabel').FloatLabel();
+});</pre>
+                </li>
+            </ol>
+
+            <h3>
+                <a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h3>
+
+            <h5>Label text</h5>
+            <pre>data-label-text=""</pre>
+
+            <h5>Label moving direction</h5>
+            <p>Sets the position of the label when input element has some value. Default value: Up</p>
+            <pre>data-label-direction="down"</pre>
+
+            <h5>Icon</h5>
+            <pre>data-label-icon=""</pre>
+            <h6>Possible icons</h6>
+            <ul class="icons">
+                <li>
+                    <i class="float-label-icon float-label-icon-heart"></i>
+                    <p>heart</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-comment"></i>
+                    <p>comment</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-info"></i>
+                    <p>info</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-internet"></i>
+                    <p>internet</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-link"></i>
+                    <p>link</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-lock"></i>
+                    <p>lock</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-message"></i>
+                    <p>message</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-phone"></i>
+                    <p>phone</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-refresh"></i>
+                    <p>refresh</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-settings"></i>
+                    <p>settings</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-star"></i>
+                    <p>star</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-video"></i>
+                    <p>video</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-warning"></i>
+                    <p>warning</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-user"></i>
+                    <p>user</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-search"></i>
+                    <p>search</p>
+                </li>
+                <li>
+                    <i class="float-label-icon float-label-icon-skype"></i>
+                    <p>skype</p>
+                </li>
+            </ul>
+            <div style="clear: both;"></div>
+            <p>More to come...</p>
+            <h5>Icon position</h5>
+            <p>Sets the position of the icon in the input element. Default value: Right</p>
+            <pre>data-label-icon-side="left"</pre>
+
+            <h3>
+                <a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h3>
+
+            <p>Nemanja Popovic (<a href="https://github.com/nemanja23031991" class="user-mention">@nemanja23031991</a>) in 2014.</p>
+
+            <h3>
+                <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+            <p>Having trouble with Float Label? Check out the documentation at <a href="https://github.com/nemanja23031991/FloatLabel">https://github.com/nemanja23031991/FloatLabel</a> or contact <a href="mailto:nemanja23031991@yahoo.com">nemanja23031991@yahoo.com</a> and we’ll help you sort it out.</p>
+        </section>
     </div>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Float label maintained by <a href="https://github.com/nemanja23031991">nemanja23031991</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
+        <footer class="inner">
+            <p class="copyright">Float label maintained by <a href="https://github.com/nemanja23031991">nemanja23031991</a></p>
+        </footer>
     </div>
 
-    
 
-  </body>
+
+</body>
 </html>
