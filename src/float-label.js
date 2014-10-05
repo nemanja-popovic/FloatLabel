@@ -10,13 +10,13 @@
     'namespace FloatLabel';
     $.fn.FloatLabel = function (options) {
         var settings = $.extend({
-            hasIcon: true,
-            iconSide:'right',
+            hasIcon: false,
+            iconSide: 'right',
             direction: 'float-label-up'
         }, options);
 
         return this.each(function () {
-    
+
             var selectedObj = this;
 
             var floatLabel = {
@@ -24,9 +24,9 @@
                 L: '',
                 labelText: '',
                 Icon: '',
-                iconName:'username',
+                iconName: 'username',
                 hasIcon: settings.hasIcon,
-                iconSide:settings.iconSide,
+                iconSide: settings.iconSide,
                 floatDirection: settings.direction,
                 getConfigData: function () {
                     var E = this;
@@ -38,14 +38,13 @@
 
                     //Get direction for label
                     if (E.I.attr('data-label-direction')) {
-                        E.floatDirection  = 'float-label-' + E.I.data('label-direction');
+                        E.floatDirection = 'float-label-' + E.I.data('label-direction');
                     }
 
-                    if (E.hasIcon) {
-                        //Get icon
-                        if (E.I.attr('data-label-icon')) {
-                            E.iconName = '' + E.I.data('label-icon');
-                        }
+                    //Get icon
+                    if (E.I.attr('data-label-icon')) {
+                        E.iconName = '' + E.I.data('label-icon');
+                        E.hasIcon = true;
                     }
                     //Get side
                     if (E.I.attr('data-label-icon-side')) {
