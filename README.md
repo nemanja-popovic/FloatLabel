@@ -3,7 +3,7 @@
 jQuery plugin for floating labels
 
 ## Getting Started
-_(Coming soon)_
+Detailed at http://nemanja23031991.github.io/FloatLabel/
 
 ## Documentation
 _(Coming soon)_
